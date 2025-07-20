@@ -14,15 +14,17 @@ If you have go already installed, and you attempt to use igo to manage
 your installation of Go, you can break your system configurations. 
 
 Download the binaries and use them to install go!
+
+    [ ! -d ~/bin ] && mkdir -p ~/bin
     
     # MacOS Apple Silicon
-    curl -L https://github.com/andreimerlescu/igo/releases/download/v1.1.0/igo-darwin-arm64 ~/bin/igo
+    curl -L https://github.com/andreimerlescu/igo/releases/download/v1.1.0/igo-darwin-arm64 --output "${GOBIN:-"~/bin"}/igo"
     # MacOS Apple Intel
-    curl -L https://github.com/andreimerlescu/igo/releases/download/v1.1.0/igo-darwin-amd64 ~/bin/igo
+    curl -L https://github.com/andreimerlescu/igo/releases/download/v1.1.0/igo-darwin-amd64 --output "${GOBIN:-"~/bin"}/igo"
     # Linux arm64
-    curl -L https://github.com/andreimerlescu/igo/releases/download/v1.1.0/igo-linux-arm64 ~/bin/igo
+    curl -L https://github.com/andreimerlescu/igo/releases/download/v1.1.0/igo-linux-arm64 --output "${GOBIN:-"~/bin"}/igo"
     # Linux amd64
-    curl -L https://github.com/andreimerlescu/igo/releases/download/v1.1.0/igo-linux-amd64 ~/bin/igo
+    curl -L https://github.com/andreimerlescu/igo/releases/download/v1.1.0/igo-linux-amd64 --output "${GOBIN:-"~/bin"}/igo"
 
     # Remove Apple Quarantine Blocker
     command -v xattr 2> /dev/null && xattr -d com.apple.quarantine ~/bin/igo
